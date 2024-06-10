@@ -1,0 +1,16 @@
+button {
+  padding: 15px 30px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+select,
+label {
+  font-size: 1.4rem;
+  padding: 0.4rem;
+  width: 30%;
+}

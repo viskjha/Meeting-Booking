@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Book Meeting</h1>
+  <form [formGroup]="meeting_form">
+    <label for="">Username</label>
+    <input type="text" formControlName="username" />
+    <label for="">Meeting Date</label>
+    <input type="date" formControlName="meeting_data" />
+    <div class="error">**selected date must be between Monday to Friday</div>
+    <label for="">Start Time</label>
+    <input type="time" formControlName="start_time" />
+    <label for="">End Time</label>
+    <input type="time" formControlName="end_time" />
+    <div class="error">
+      **time should be between 09:00AM and 06:00PM, Meeting should be of atleast
+      30 minutes
+    </div>
+    <br />
+    <button
+      class="save"
+      [hidden]="show_seached_room"
+      (click)="onClickSearchRoom()"
+    >
+      Search Room
+    </button>
+    <br /><br />
+    <div *ngIf="show_seached_room">
+      <label for="">Meeting Room</label>
+      <select formControlName="meeting_room">
+        <option value="{{ data }}" *ngFor="let data of getMeetingRoomList()">
+          {{ data }}
+        </option>
+      </select>
+      <label for="">Agenda</label>
+      <input type="text" formControlName="agenda" />
+    </div>
+  </form>
+  <br /><br />
+
+  <div>
+    <button
+      class="save"
+      (click)="onClickSave()"
+      [disabled]="!meeting_form.valid"
+    >
+      Save
+    </button>
+    &nbsp;&nbsp;
+    <button (click)="onClickCancel()">Cancel</button>
+  </div>
+</div>

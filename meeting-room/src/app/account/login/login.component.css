@@ -1,0 +1,33 @@
+.container {
+  border: 3px solid rgb(11, 106, 194);
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+}
+input,
+label {
+  font-size: 1.4rem;
+  padding: 0.4rem;
+  width: 98%;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+}
+
+.btn {
+  background-color: #2ecc71;
+}
+
+.btn:disabled {
+  background-color: #9caaa2;
+}

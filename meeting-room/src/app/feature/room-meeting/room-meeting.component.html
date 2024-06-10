@@ -1,0 +1,29 @@
+<app-top-nav></app-top-nav>
+
+<div *ngIf="router.url == '/meeting'">
+  <button [routerLink]="['new']">Book Meeting</button>
+  <br />
+  <br />
+
+  <h2>Your Upcomming Meeting</h2>
+  <app-meeting-details-view
+    [meeting_details]="meeting_data"
+  ></app-meeting-details-view>
+  <br /><br />
+
+  <h2>Rooms Meeting Details</h2>
+  <label>Select Meeting Room</label>
+  <br />
+  <select (change)="onChangeMeetingRoom($event)">
+    <option value="{{ data }}" *ngFor="let data of getMeetingRoomList()">
+      {{ data }}
+    </option>
+  </select>
+  <br />
+  <br />
+  <app-meeting-details-view
+    [meeting_details]="filtered_meeting_data"
+  ></app-meeting-details-view>
+</div>
+
+<router-outlet></router-outlet>

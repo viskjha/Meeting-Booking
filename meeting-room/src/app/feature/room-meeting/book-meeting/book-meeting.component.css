@@ -1,0 +1,37 @@
+.container {
+  border: 3px solid rgb(11, 106, 194);
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.save {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.error {
+  color: red;
+}
+
+.save:disabled {
+  background-color: #9caaa2;
+}
+
+input,
+select,
+label {
+  font-size: 1.4rem;
+  padding: 0.4rem;
+  width: 98%;
+}

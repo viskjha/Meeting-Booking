@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header flex-container">
+    <div>Sl No.</div>
+    <div>User Name</div>
+    <div>Agenda</div>
+    <div>Data</div>
+    <div>Time</div>
+    <div>Room</div>
+    <div>Action</div>
+  </div>
+  <div
+    [ngClass]="i % 2 == 0 ? 'row-colour' : ''"
+    class="flex-container"
+    *ngFor="let data of meeting_details; index as i"
+  >
+    <div>{{ i + 1 }}.</div>
+    <div>{{ data.username }}</div>
+    <div>{{ data.agenda }}</div>
+    <div>{{ data.meeting_data }}</div>
+    <div>{{ data.start_time }} - {{ data.end_time }}</div>
+    <div>{{ data.meeting_room }}</div>
+    <div (click)="onClickDelete(data.id)">
+      <small class="delete">Delete</small>
+    </div>
+  </div>
+</div>

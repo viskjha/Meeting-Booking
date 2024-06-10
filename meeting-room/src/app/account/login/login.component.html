@@ -1,0 +1,28 @@
+<br /><br />
+<div class="container">
+  <h1>Book A Meeting Room</h1>
+  <form [formGroup]="login_form">
+    <div>
+      <label>Username: </label>
+      <br />
+      <input type="text" formControlName="username" />
+    </div>
+    <br />
+    <div>
+      <label>Password: </label>
+      <br />
+      <input type="password" formControlName="password" />
+    </div>
+  </form>
+  <br />
+  <div>
+    <button class="btn" (click)="onClickLogin()" [disabled]="!login_form.valid">
+      Login
+    </button>
+  </div>
+  <br /><br />
+  <div class="error" *ngIf="error_massage">{{ error_massage }}</div>
+  <div>
+    <b><i>Password: Password123</i></b>
+  </div>
+</div>
